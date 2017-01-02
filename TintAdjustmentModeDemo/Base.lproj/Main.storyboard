@@ -85,6 +85,55 @@
             </objects>
             <point key="canvasLocation" x="140" y="137.18140929535232"/>
         </scene>
+        <!--Overlay View Controller-->
+        <scene sceneID="yM3-8S-bCp">
+            <objects>
+                <viewController storyboardIdentifier="OverlayViewController" id="wei-bE-gSx" customClass="OverlayViewController" customModule="TintAdjustmentModeDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wyo-Jq-E44"/>
+                        <viewControllerLayoutGuide type="bottom" id="DXU-qz-Gjb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="W9D-0v-GID">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xwb-WV-DTo">
+                                <rect key="frame" x="0.0" y="469" width="375" height="198"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obt-Ms-EBc">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="198"/>
+                                        <state key="normal" title="Dismiss"/>
+                                        <connections>
+                                            <action selector="dismiss:" destination="wei-bE-gSx" eventType="touchUpInside" id="t3v-Iw-G7L"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="obt-Ms-EBc" secondAttribute="trailing" id="5eP-gR-BeK"/>
+                                    <constraint firstAttribute="bottom" secondItem="obt-Ms-EBc" secondAttribute="bottom" id="5hO-wA-lpu"/>
+                                    <constraint firstAttribute="height" constant="198" id="bbD-aH-gRn"/>
+                                    <constraint firstItem="obt-Ms-EBc" firstAttribute="leading" secondItem="xwb-WV-DTo" secondAttribute="leading" id="q0O-1f-fJS"/>
+                                    <constraint firstItem="obt-Ms-EBc" firstAttribute="top" secondItem="xwb-WV-DTo" secondAttribute="top" id="zqg-e7-QMM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.39541514598540145" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DXU-qz-Gjb" firstAttribute="top" secondItem="xwb-WV-DTo" secondAttribute="bottom" id="HXq-rb-Cqm"/>
+                            <constraint firstAttribute="trailing" secondItem="xwb-WV-DTo" secondAttribute="trailing" id="P4j-Jx-Fl2"/>
+                            <constraint firstItem="xwb-WV-DTo" firstAttribute="leading" secondItem="W9D-0v-GID" secondAttribute="leading" id="SWR-Pb-e3D"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="controlContainer" destination="xwb-WV-DTo" id="H5t-lx-2DK"/>
+                        <outlet property="dismissButton" destination="obt-Ms-EBc" id="Yry-q9-srw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uJC-VM-gs1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="989.60000000000002" y="137.18140929535232"/>
+        </scene>
     </scenes>
     <resources>
         <image name="avatar" width="187" height="187"/>

@@ -15,19 +15,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
     @IBAction func showOverlay(_ sender: Any) {
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction) in
-            // DO NOTHING
-        }))
+        let overlay = self.storyboard!.instantiateViewController(withIdentifier: "OverlayViewController")
 
-        self.present(alert, animated: true, completion: nil)
+        self.present(overlay, animated: true, completion: nil)
     }
 }
 

@@ -14,6 +14,7 @@
 		B0028E2F1E1AE9B9003BE007 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0028E2D1E1AE9B9003BE007 /* LaunchScreen.storyboard */; };
 		B0028E3A1E1AEC20003BE007 /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0028E391E1AEC20003BE007 /* BorderButton.swift */; };
 		B0028E3C1E1AEC62003BE007 /* AvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0028E3B1E1AEC62003BE007 /* AvatarImage.swift */; };
+		B0028E3F1E1AFD94003BE007 /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0028E3E1E1AFD94003BE007 /* OverlayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B0028E301E1AE9B9003BE007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0028E391E1AEC20003BE007 /* BorderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
 		B0028E3B1E1AEC62003BE007 /* AvatarImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImage.swift; sourceTree = "<group>"; };
+		B0028E3E1E1AFD94003BE007 /* OverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		B0028E231E1AE9B9003BE007 /* TintAdjustmentModeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B0028E3D1E1AFD74003BE007 /* Overlay VC */,
 				B0028E381E1AEC20003BE007 /* Controls */,
 				B0028E241E1AE9B9003BE007 /* AppDelegate.swift */,
 				B0028E261E1AE9B9003BE007 /* ViewController.swift */,
@@ -76,6 +79,14 @@
 				B0028E3B1E1AEC62003BE007 /* AvatarImage.swift */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		B0028E3D1E1AFD74003BE007 /* Overlay VC */ = {
+			isa = PBXGroup;
+			children = (
+				B0028E3E1E1AFD94003BE007 /* OverlayViewController.swift */,
+			);
+			path = "Overlay VC";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +164,7 @@
 			files = (
 				B0028E271E1AE9B9003BE007 /* ViewController.swift in Sources */,
 				B0028E251E1AE9B9003BE007 /* AppDelegate.swift in Sources */,
+				B0028E3F1E1AFD94003BE007 /* OverlayViewController.swift in Sources */,
 				B0028E3C1E1AEC62003BE007 /* AvatarImage.swift in Sources */,
 				B0028E3A1E1AEC20003BE007 /* BorderButton.swift in Sources */,
 			);
