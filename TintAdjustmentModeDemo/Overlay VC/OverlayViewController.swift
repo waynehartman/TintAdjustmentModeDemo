@@ -17,13 +17,13 @@ class OverlayViewController: UIViewController {
         
         self.transitioningDelegate = self
         self.modalPresentationStyle = .overCurrentContext
-        
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismiss(_:)))
-        self.view.addGestureRecognizer(tapRecognizer);
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismiss(_:)))
+        self.view.addGestureRecognizer(tapRecognizer);
     }
 
     @IBAction func dismiss(_ sender: Any) {
