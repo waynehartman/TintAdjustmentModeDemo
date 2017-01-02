@@ -21,5 +21,13 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func showOverlay(_ sender: Any) {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction) in
+            // DO NOTHING
+        }))
+
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
