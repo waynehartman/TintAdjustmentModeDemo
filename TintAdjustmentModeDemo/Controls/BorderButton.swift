@@ -17,4 +17,10 @@ class BorderButton: UIButton {
         self.layer.borderWidth = 1.0 / UIScreen.main.scale
         self.layer.cornerRadius = self.frame.size.height * 0.5;
     }
+
+    override func tintColorDidChange() {
+        super.tintColorDidChange()
+
+        self.layer.borderColor = self.tintColor.cgColor;
+    }
 }
