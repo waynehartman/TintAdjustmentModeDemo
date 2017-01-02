@@ -7,15 +7,15 @@
 //
 
 import UIKit
+import CoreImage
 
 class AvatarImage: UIImageView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-//        self.layer.borderColor = self.tintColor.cgColor
-//        self.layer.borderWidth = 1.0 / UIScreen.main.scale
-//        self.layer.cornerRadius = self.frame.size.height * 0.5;
+
+        self.layer.borderColor = self.tintColor.cgColor
+        self.layer.borderWidth = 5.0
+        self.layer.cornerRadius = self.frame.size.height * 0.5;
     }
-    
 }
