@@ -29,13 +29,7 @@ class AvatarImage: UIImageView {
 
         self.layer.borderColor = self.tintColor.cgColor;
 
-        var newImage: UIImage? = nil
-
-        if (self.tintAdjustmentMode == .dimmed) {
-            newImage = self.dimmedImage
-        } else {
-            newImage = self.normalImage
-        }
+        let newImage = self.tintAdjustmentMode == .dimmed ? self.dimmedImage : self.normalImage
 
         let transition = CATransition()
         transition.duration = CATransaction.animationDuration()
@@ -51,35 +45,35 @@ class AvatarImage: UIImageView {
         guard let image = normalImage else {
             return nil
         }
-        
+
         let bawFilterParms : [String : Any] = [ kCIInputBrightnessKey : 0.0, kCIInputContrastKey : 1.1, kCIInputSaturationKey : 0.0, ]
         let bawFilter = CIFilter(name: "CIColorControls", withInputParameters:bawFilterParms)
         let exposureFilterParms : [String : Any] = [kCIInputEVKey : 0.7]
         let exposureFilter = CIFilter(name: "CIExposureAdjust", withInputParameters: exposureFilterParms)
         let blurFilterParms : [String : Any] = [:]
-        let blurFilter = CIFilter(name: "CIBoxBlur", withInputParameters: blurFilterParms)
-        
+        let blurFilter = CIFilter(name: "CIDiscBlur", withInputParameters: blurFilterParms)
+
         var inputImage = CIImage(cgImage: image.cgImage!);
         let filters = [ bawFilter, exposureFilter,  blurFilter ]
-        
+
         for filter in filters {
             filter?.setValue(inputImage, forKey: kCIInputImageKey)
             guard let outputImage = filter?.outputImage else {
                 return nil
             }
-            
+
             inputImage = outputImage
         }
-        
+
         let context = CIContext(options: nil)
         let cgImage = context.createCGImage(inputImage, from: inputImage.extent)
-        
+
         guard let outputCGImage = cgImage else {
             return nil
         }
-        
+
         let dimmedImage = UIImage(cgImage: outputCGImage, scale: image.scale, orientation: image.imageOrientation)
-        
+
         return dimmedImage
     }
 }
