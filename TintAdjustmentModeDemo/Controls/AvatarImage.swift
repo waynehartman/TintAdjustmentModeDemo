@@ -23,19 +23,13 @@ class AvatarImage: UIImageView {
         self.normalImage = self.image
         self.dimmedImage = self.createDimmedImage(normalImage: self.image)
     }
-    
+
     override func tintColorDidChange() {
         super.tintColorDidChange()
 
         self.layer.borderColor = self.tintColor.cgColor;
 
-        var newImage: UIImage? = nil
-
-        if (self.tintAdjustmentMode == .dimmed) {
-            newImage = self.dimmedImage
-        } else {
-            newImage = self.normalImage
-        }
+        let newImage = self.tintAdjustmentMode == .dimmed ? self.dimmedImage : self.normalImage
 
         let transition = CATransition()
         transition.duration = CATransaction.animationDuration()
@@ -56,8 +50,8 @@ class AvatarImage: UIImageView {
         let bawFilter = CIFilter(name: "CIColorControls", withInputParameters:bawFilterParms)
         let exposureFilterParms : [String : Any] = [kCIInputEVKey : 0.7]
         let exposureFilter = CIFilter(name: "CIExposureAdjust", withInputParameters: exposureFilterParms)
-        let blurFilterParms : [String : Any] = [:]
-        let blurFilter = CIFilter(name: "CIBoxBlur", withInputParameters: blurFilterParms)
+        let blurFilterParms : [String : Any] = [ kCIInputRadiusKey : 5.0 ]
+        let blurFilter = CIFilter(name: "CIDiscBlur", withInputParameters: blurFilterParms)
 
         var inputImage = CIImage(cgImage: image.cgImage!);
         let filters = [ bawFilter, exposureFilter,  blurFilter ]
@@ -73,7 +67,7 @@ class AvatarImage: UIImageView {
 
         let context = CIContext(options: nil)
         let cgImage = context.createCGImage(inputImage, from: inputImage.extent)
-        
+
         guard let outputCGImage = cgImage else {
             return nil
         }
